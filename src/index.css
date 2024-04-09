@@ -1,0 +1,30 @@
+form  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+form label {
+    gap: 30px;
+}
+
+.main{ 
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+input[type=text] {
+    width: 50%;
+
+}
+
+button {
+    width: 5vw;
+}
+
+.edit, .preview {
+    width: 50%;
+}
