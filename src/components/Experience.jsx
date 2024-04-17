@@ -1,11 +1,4 @@
-import { useState } from 'react';
-
-
-function Experience() {
-    const [compName, setCompName ] = useState("");
-    const [role, setRole ] = useState("");
-    const [responsibilities, setResponsibilities ] = useState("");
-    const [dateFromTo, setDateFromTo] = useState("");
+function Experience({handleInput, expSubmission} ) {
 
     return (
         <> 
@@ -14,32 +7,37 @@ function Experience() {
             <label>Company Name: 
                 <input
                 type="text"
-                value={compName}
-                onChange={(e) => setCompName(e.target.value)}
+                name="compName"
+                onChange= {handleInput}
                 />
             </label>
             <label>Role: 
                 <input
                 type="text"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
+                name="role"
+                onChange= {handleInput}
                 />
             </label>
             <label>Responsibilities: 
                 <input
                 type="text"
-                value={responsibilities}
-                onChange={(e) => setResponsibilities(e.target.value)}
+                name="responsibilities"
+                onChange= {handleInput}
                 />
             </label>
             <label>Date: 
                 <input
-                type="text"
-                value={dateFromTo}
-                onChange={(e) => setDateFromTo(e.target.value)}
+                type="date"
+                name="dateFrom"
+                onChange= {handleInput}
+                />
+                <input
+                type="date"
+                name="dateTo"
+                onChange= {handleInput}
                 />
             </label>
-            <button type='submit'>Add</button>
+            <button type='submit'  onClick={expSubmission} >Add </button>
         </form>
         </>
     )

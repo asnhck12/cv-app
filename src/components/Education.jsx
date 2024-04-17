@@ -1,33 +1,30 @@
-import { useState } from 'react';
-
-
-function Education() {
-    const [schoolName, setSchoolName ] = useState("");
-    const [subject, setSubject ] = useState("");
-    const [date, setDate ] = useState("");
+function Education({ handleInput, edSubmission }) {
 
     return (
         <><h2>Education</h2>
-        <form>
+        <form >
             <label>School Name:
                 <input
                     type="text"
-                    value={schoolName}
-                    onChange={(e) => setSchoolName(e.target.value)} />
+                    name="schName"
+                    onChange= {handleInput}
+                    />
             </label>
             <label>Subject:
                 <input
                     type="text"
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)} />
+                    name="schSubject"
+                    onChange= {handleInput}
+                    />
             </label>
             <label>Date:
                 <input
-                    type="text"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)} />
+                    type="date"
+                    name="schDate"
+                    onChange= {handleInput}
+                    />
             </label>
-            <button type='submit'>Add</button>
+            <button type='submit' onClick={edSubmission}>Add </button>
         </form></>
     )
 }
