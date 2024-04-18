@@ -1,4 +1,4 @@
-function Education({ handleInput, edSubmission }) {
+function Education({ handleInput, edSubmission, formValues }) {
 
     return (
         <><h2>Education</h2>
@@ -7,6 +7,7 @@ function Education({ handleInput, edSubmission }) {
                 <input
                     type="text"
                     name="schName"
+                    value={formValues.schName}
                     onChange= {handleInput}
                     />
             </label>
@@ -14,6 +15,7 @@ function Education({ handleInput, edSubmission }) {
                 <input
                     type="text"
                     name="schSubject"
+                    value={formValues.schSubject}
                     onChange= {handleInput}
                     />
             </label>
@@ -21,6 +23,7 @@ function Education({ handleInput, edSubmission }) {
                 <input
                     type="date"
                     name="schDate"
+                    value={formValues.sch}
                     onChange= {handleInput}
                     />
             </label>

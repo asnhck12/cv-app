@@ -1,4 +1,4 @@
-function Experience({handleInput, expSubmission} ) {
+function Experience({handleInput, expSubmission, formValues} ) {
 
     return (
         <> 
@@ -8,6 +8,7 @@ function Experience({handleInput, expSubmission} ) {
                 <input
                 type="text"
                 name="compName"
+                value={formValues.compName}
                 onChange= {handleInput}
                 />
             </label>
@@ -15,6 +16,7 @@ function Experience({handleInput, expSubmission} ) {
                 <input
                 type="text"
                 name="role"
+                value={formValues.role}
                 onChange= {handleInput}
                 />
             </label>
@@ -22,6 +24,7 @@ function Experience({handleInput, expSubmission} ) {
                 <input
                 type="text"
                 name="responsibilities"
+                value={formValues.responsibilities}
                 onChange= {handleInput}
                 />
             </label>
@@ -29,11 +32,13 @@ function Experience({handleInput, expSubmission} ) {
                 <input
                 type="date"
                 name="dateFrom"
+                value={formValues.dateFrom}
                 onChange= {handleInput}
                 />
                 <input
                 type="date"
                 name="dateTo"
+                value={formValues.dateTo}
                 onChange= {handleInput}
                 />
             </label>

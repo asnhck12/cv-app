@@ -8,9 +8,8 @@ import PersonalDisplay from './components/PersonalDisplay'
 import ExperienceDisplay from './components/ExperienceDisplay'
 import Experience from './components/Experience'
 
-function App() {
 
-const [formData, setFormData] = useState({
+const initialFormData = {
   fName: '',
   sName: '',
   email: '',
@@ -23,22 +22,35 @@ const [formData, setFormData] = useState({
   responsibilities: '',
   dateFrom: '',
   dateTo: '',
-})
+}
 
-const [eduData, setEduData] = useState({
+const initialEduFormData = {
   schName: '',
   schSubject: '',
   schDate: '',
+}
+
+const intialExpFormData = {
   compName: '',
   role: '',
   responsibilities: '',
   dateFrom: '',
   dateTo: '',
-})
+}
+
+function App() {
+
+const [formData, setFormData] = useState(initialFormData);
+// const [eduFormData, setEduFormData] = useState(initialEduFormData)
+// const [expFormData, setExpFormData] = useState(intialExpFormData)
+
+const [eduData,setEduData] = useState([]);
+const [expData, setExpData] = useState([]);
+
+// const [formValues, setFormValues] = useState
 
 const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log(event.target.name + event.target.value)
     setFormData((prevData) => ({
         ...prevData,
         [name]: value,
@@ -47,35 +59,41 @@ const handleChange = (event) => {
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  console.log(formData.schName);
-  console.log(formData.compName);
-  eduData.schName = formData.schName;
-  eduData.schSubject = formData.schSubject;
-  eduData.schDate = formData.schDate;
-    const { name, value } = event.target;
-    setEduData((prevData) => ({
+  const newEdu = {
+  schName: formData.schName,
+  schSubject: formData.schSubject,
+  schDate: formData.schDate,
+  }
+    setEduData((prevData) => ([
         ...prevData,
-        [name]: value,
-    }))
+        newEdu
+    ]))
+    setFormData(initialEduFormData);
   };
-
 
 const handleSubmitExp = (event) => {
   event.preventDefault();
-  console.log(formData.schName);
-  console.log(formData.compName);
-  eduData.compName = formData.compName;
-  eduData.role = formData.role;
-  eduData.responsibilities = formData.responsibilities;
-  eduData.dateFrom = formData.dateFrom;
-  eduData.dateTo = formData.dateTo;
-  const { name, value } = event.target;
-    setEduData((prevData) => ({
+  const newExp = {
+  compName: formData.compName,
+  role: formData.role,
+  responsibilities: formData.responsibilities,
+  dateFrom: formData.dateFrom,
+  dateTo: formData.dateTo,
+}
+    setExpData((prevData) => ([
         ...prevData,
-        [name]: value,
-    }))
+        newExp
+    ]))
+    setFormData(intialExpFormData);
   };
 
+const deleteEduEntry = (index) => {
+  setEduData((prevData) => prevData.filter((_, i) => i !== index))
+}
+
+const deleteExpEntry = (index) => {
+  setExpData((prevData) => prevData.filter((_, i) => i !== index))
+}
 
   return (
     <>
@@ -83,13 +101,13 @@ const handleSubmitExp = (event) => {
       <div className="main">
         <div className='edit'>
         <Personal inputChange={handleChange}/>
-        <Education handleInput={handleChange} edSubmission={handleSubmit}/>
-        <Experience handleInput={handleChange} expSubmission={handleSubmitExp}/>
+        <Education handleInput={handleChange} edSubmission={handleSubmit} formValues={formData}/>
+        <Experience handleInput={handleChange} expSubmission={handleSubmitExp} formValues={formData}/>
       </div>
       <div className='preview'>
         <PersonalDisplay {...formData}/>
-        <EducationDisplay {...eduData}/>
-        <ExperienceDisplay {...eduData}/>
+        <EducationDisplay eduData={eduData} deleteEduEntry={deleteEduEntry}/>
+        <ExperienceDisplay expData={expData} deleteExpEntry={deleteExpEntry}/>
       </div>
       </div>
     </>
