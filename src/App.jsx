@@ -41,50 +41,66 @@ const intialExpFormData = {
 function App() {
 
 const [formData, setFormData] = useState(initialFormData);
-// const [eduFormData, setEduFormData] = useState(initialEduFormData)
-// const [expFormData, setExpFormData] = useState(intialExpFormData)
+const [eduFormData, setEduFormData] = useState(initialEduFormData)
+const [expFormData, setExpFormData] = useState(intialExpFormData)
 
 const [eduData,setEduData] = useState([]);
 const [expData, setExpData] = useState([]);
 
-// const [formValues, setFormValues] = useState
-
-const handleChange = (event) => {
+const handleChange = (formName) => (event) => {
     const { name, value } = event.target;
+    switch (formName) {
+      case 'personal':
     setFormData((prevData) => ({
         ...prevData,
         [name]: value,
     }))
-    };
+    break;
+    case 'education':
+      setEduFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+    }))
+    break;
+    case 'experience':
+      setExpFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+    }))
+    break;
+    default:
+    break;
+    }
+};
 
 const handleSubmit = (event) => {
   event.preventDefault();
   const newEdu = {
-  schName: formData.schName,
-  schSubject: formData.schSubject,
-  schDate: formData.schDate,
+  schName: eduFormData.schName,
+  schSubject: eduFormData.schSubject,
+  schDate: eduFormData.schDate,
   }
     setEduData((prevData) => ([
         ...prevData,
         newEdu
     ]))
-    setFormData(initialEduFormData);
+    setEduFormData(initialEduFormData);
   };
 
 const handleSubmitExp = (event) => {
   event.preventDefault();
   const newExp = {
-  compName: formData.compName,
-  role: formData.role,
-  responsibilities: formData.responsibilities,
-  dateFrom: formData.dateFrom,
-  dateTo: formData.dateTo,
+  compName: expFormData.compName,
+  role: expFormData.role,
+  responsibilities: expFormData.responsibilities,
+  dateFrom: expFormData.dateFrom,
+  dateTo: expFormData.dateTo,
 }
     setExpData((prevData) => ([
         ...prevData,
         newExp
     ]))
-    setFormData(intialExpFormData);
+    setExpFormData(intialExpFormData);
   };
 
 const deleteEduEntry = (index) => {
@@ -100,9 +116,9 @@ const deleteExpEntry = (index) => {
       <h1>CV Builder</h1>
       <div className="main">
         <div className='edit'>
-        <Personal inputChange={handleChange}/>
-        <Education handleInput={handleChange} edSubmission={handleSubmit} formValues={formData}/>
-        <Experience handleInput={handleChange} expSubmission={handleSubmitExp} formValues={formData}/>
+        <Personal inputChange={handleChange('personal')}/>
+        <Education handleInput={handleChange('education')} edSubmission={handleSubmit} formValues={eduFormData}/>
+        <Experience handleInput={handleChange('experience')} expSubmission={handleSubmitExp} formValues={expFormData}/>
       </div>
       <div className='preview'>
         <PersonalDisplay {...formData}/>
