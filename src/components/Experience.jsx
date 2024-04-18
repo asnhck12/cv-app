@@ -1,4 +1,4 @@
-function Experience({handleInput, expSubmission, formValues} ) {
+function Experience({handleInput, expSubmission, formValues, isEditingExperience, editFormExperience, expEditSubmission} ) {
 
     return (
         <> 
@@ -8,7 +8,7 @@ function Experience({handleInput, expSubmission, formValues} ) {
                 <input
                 type="text"
                 name="compName"
-                value={formValues.compName}
+                value={isEditingExperience ? editFormExperience.compName : formValues.compName}
                 onChange= {handleInput}
                 />
             </label>
@@ -16,7 +16,7 @@ function Experience({handleInput, expSubmission, formValues} ) {
                 <input
                 type="text"
                 name="role"
-                value={formValues.role}
+                value={isEditingExperience ? editFormExperience.role : formValues.role}
                 onChange= {handleInput}
                 />
             </label>
@@ -24,7 +24,7 @@ function Experience({handleInput, expSubmission, formValues} ) {
                 <input
                 type="text"
                 name="responsibilities"
-                value={formValues.responsibilities}
+                value={isEditingExperience ? editFormExperience.responsibilities : formValues.responsibilities}
                 onChange= {handleInput}
                 />
             </label>
@@ -32,17 +32,21 @@ function Experience({handleInput, expSubmission, formValues} ) {
                 <input
                 type="date"
                 name="dateFrom"
-                value={formValues.dateFrom}
+                value={isEditingExperience ? editFormExperience.dateFrom : formValues.dateFrom}
                 onChange= {handleInput}
                 />
                 <input
                 type="date"
                 name="dateTo"
-                value={formValues.dateTo}
+                value={isEditingExperience ? editFormExperience.dateTo : formValues.dateTo}
                 onChange= {handleInput}
                 />
             </label>
+            { isEditingExperience ? (
+                <button type='submit' onClick={expEditSubmission}>Save </button>
+            ) : (
             <button type='submit'  onClick={expSubmission} >Add </button>
+)} 
         </form>
         </>
     )

@@ -1,4 +1,4 @@
-function Education({ handleInput, edSubmission, formValues }) {
+function Education({ handleInput, edSubmission, formValues, isEditingEducation, editFormEducation, edEditSubmission }) {
 
     return (
         <><h2>Education</h2>
@@ -7,7 +7,7 @@ function Education({ handleInput, edSubmission, formValues }) {
                 <input
                     type="text"
                     name="schName"
-                    value={formValues.schName}
+                    value={isEditingEducation ? editFormEducation.schName : formValues.schName}
                     onChange= {handleInput}
                     />
             </label>
@@ -15,7 +15,7 @@ function Education({ handleInput, edSubmission, formValues }) {
                 <input
                     type="text"
                     name="schSubject"
-                    value={formValues.schSubject}
+                    value={isEditingEducation ? editFormEducation.schSubject : formValues.schSubject}
                     onChange= {handleInput}
                     />
             </label>
@@ -23,11 +23,14 @@ function Education({ handleInput, edSubmission, formValues }) {
                 <input
                     type="date"
                     name="schDate"
-                    value={formValues.sch}
+                    value={isEditingEducation ? editFormEducation.schDate : formValues.schDate}
                     onChange= {handleInput}
                     />
             </label>
-            <button type='submit' onClick={edSubmission}>Add </button>
+            { isEditingEducation ? (
+                <button type='submit' onClick={edEditSubmission}>Save </button> ) :(
+            <button type='submit' onClick={edSubmission}>Add </button> )}
+            
         </form></>
     )
 }

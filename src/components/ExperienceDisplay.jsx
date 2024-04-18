@@ -1,5 +1,5 @@
 // function ExperienceDisplay({compName,role,responsibilities,dateFrom,dateTo})
-function ExperienceDisplay({expData, deleteExpEntry})
+function ExperienceDisplay({expData, deleteExpEntry, editExpEntry})
 
 {
     return (
@@ -14,6 +14,7 @@ function ExperienceDisplay({expData, deleteExpEntry})
         <p>Responsibilities: {experience.responsibilities}</p>
         <p>Date From: {experience.dateFrom}</p>
         <p>Date To: {experience.dateTo}</p> 
+        <button className="expEdit" onClick={() => editExpEntry(index)}>Edit</button>
         <button className="expDelete" onClick={() => deleteExpEntry(index)}>Delete</button>
     </div>
 
