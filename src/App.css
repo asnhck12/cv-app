@@ -50,10 +50,6 @@ body {
   gap: 65px;
 }
 
-/* .preview h2 {
-  background-color: lightgray;
-} */
-
 form  {
   display: flex;
   flex-direction: column;
@@ -123,5 +119,6 @@ button {
 
 .personalDetails {
   background-color: black;
-  color: white;;
+  color: white;
+  height: 150px;
 }
