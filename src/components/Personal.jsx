@@ -4,18 +4,11 @@ function Personal({ inputChange }) {
         <>
         <h2>Personal Details</h2>
         <form>
-            <label>First Name: 
+            <label>Name: 
                 <input
                 type="text"
                 name="fName"
-                 onChange={inputChange}
-                />
-            </label>
-            <label>Surname: 
-                <input
-                type="text"
-                name='sName'
-                 onChange={inputChange}
+                onChange={inputChange}
                 />
             </label>
             <label>Email Address: 

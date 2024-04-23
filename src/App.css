@@ -1,12 +1,127 @@
+/* * {
+  border: 1px black solid;
+} */
+
+h2 {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: black;
+  color: white;
+}
+
+html, body, .main {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  }
+
+.contactDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: larger;
+}
+
 #root {
-  /* max-width: 1280px; */
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100%;
 }
 
 
+.preview {
+  border: 1px black solid;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+
+/* .preview h2 {
+  background-color: lightgray;
+} */
+
+form  {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 2px;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 5px;
+}
+
+.main{ 
+  gap: 5px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+input {
+  width: 50%;
+  height: 25px;
+  font-size: large;
+
+}
+
+.edit, .preview {
+  width: 50%;
+}
+
+.edit {
+  padding-left: 60px;
+}
+
+button {
+  background: white;
+  border: black 1px solid;
+  height: 1vw;
+  margin-top: 16px;
+  width: 5vw;
+}
+
+.eduDetails  {
+  grid-template-columns: 1fr 1fr 1fr repeat(2, 12%);
+}
+
+.expDetails  {
+  grid-template-columns: 2fr 1fr 2fr repeat(2, 12%);
+}
+
+.expDetails p {
+  padding-right: 4px;
+}
+
+.eduDetails, .expDetails  {
+  display: grid;
+  text-align: left;
+}
+
+.eduDisplay, .expDisplay { 
+  
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.personalDetails {
+  background-color: black;
+  color: white;;
+}

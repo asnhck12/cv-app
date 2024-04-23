@@ -19,6 +19,14 @@ function Education({ handleInput, edSubmission, formValues, isEditingEducation, 
                     onChange= {handleInput}
                     />
             </label>
+            <label>Grade:
+                <input
+                    type="text"
+                    name="schGrade"
+                    value={isEditingEducation ? editFormEducation.schGrade : formValues.schGrade}
+                    onChange= {handleInput}
+                    />
+            </label>
             <label>Date:
                 <input
                     type="date"

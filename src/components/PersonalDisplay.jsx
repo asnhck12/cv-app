@@ -2,7 +2,7 @@
 // import Personal from "./Personal";
 
 function PersonalDisplay({fName,
-    sName,
+    // sName,
     email,
     number})
     {
@@ -10,11 +10,14 @@ function PersonalDisplay({fName,
     return (
         
         <div className="personalDetails">
-        <h2> Personal Details</h2>
-                <p>First Name: {fName}</p>
-                <p>Surname: {sName}</p>
-                <p>Email Address: {email}</p>
-                <p>Phone Number: {number}</p>        </div>
+        {/* <h2> Personal Details</h2> */}
+                <h1> {fName}</h1>
+                {/* <p> {sName}</p> */}
+                <div className="contactDetails">
+                <p> {email}</p>
+                <p> {number}</p>
+                </div>
+                        </div>
     
     
     

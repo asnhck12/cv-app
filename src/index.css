@@ -1,12 +1,15 @@
-form  {
+/* form  {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-}
+    text-align: left;
+    gap: 2px;
+} */
 
-form label {
-    gap: 30px;
+/* form label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
 }
 
 .main{ 
@@ -16,7 +19,7 @@ form label {
     width: 100%;
 }
 
-input[type=text] {
+input {
     width: 50%;
 
 }
@@ -27,4 +30,4 @@ button {
 
 .edit, .preview {
     width: 50%;
-}
+} */

@@ -11,7 +11,6 @@ import Experience from './components/Experience'
 
 const initialFormData = {
   fName: '',
-  sName: '',
   email: '',
   number: '',
 }
@@ -19,6 +18,7 @@ const initialFormData = {
 const initialEduFormData = {
   schName: '',
   schSubject: '',
+  schGrade: '',
   schDate: '',
 }
 
@@ -86,6 +86,7 @@ const handleSubmitEdu = (event) => {
   const newEdu = {
   schName: eduFormData.schName,
   schSubject: eduFormData.schSubject,
+  schGrade: eduFormData.schGrade,
   schDate: eduFormData.schDate,
   }
     setEduData((prevData) => ([
