@@ -7,6 +7,7 @@ import EducationDisplay from './components/EducationDisplay'
 import PersonalDisplay from './components/PersonalDisplay'
 import ExperienceDisplay from './components/ExperienceDisplay'
 import Experience from './components/Experience'
+import ghLogo from './assets/github_icon.svg'
 
 
 const initialFormData = {
@@ -175,6 +176,18 @@ const deleteExpEntry = (index) => {
         <ExperienceDisplay expData={expData} deleteExpEntry={deleteExpEntry} editExpEntry={editExpEntry}/>
       </div>
       </div>
+      <div id="footer">
+            <div id="gitHubText">
+                <a href="https://github.com/asnhck12" target="_blank">
+                    <p>asnhck12</p>
+                    </a>
+            </div>
+            <div id="gitHubIcon">
+                <a href="https://github.com/asnhck12" target="_blank">
+                    <img src={ghLogo} />
+                    </a>
+            </div>
+        </div>
     </>
   )
 }

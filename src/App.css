@@ -80,6 +80,8 @@ input {
 
 .edit, .preview {
   width: 50%;
+  max-height: 880px;
+
 }
 
 .edit {
@@ -89,9 +91,9 @@ input {
 button {
   background: white;
   border: black 1px solid;
-  height: 1vw;
   margin-top: 16px;
   width: 5vw;
+  height: 30px;
 }
 
 .eduDetails  {
@@ -121,4 +123,21 @@ button {
   background-color: black;
   color: white;
   height: 150px;
+}
+
+#gitHubIcon img {
+  width: 40px;
+  height: auto;
+}
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+a {
+  text-decoration: none;
 }
