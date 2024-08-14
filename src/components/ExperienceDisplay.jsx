@@ -1,4 +1,3 @@
-// function ExperienceDisplay({compName,role,responsibilities,dateFrom,dateTo})
 function ExperienceDisplay({expData, deleteExpEntry, editExpEntry})
 
 {
@@ -12,7 +11,6 @@ function ExperienceDisplay({expData, deleteExpEntry, editExpEntry})
         <p><strong>{experience.compName}</strong><br/>{experience.dateFrom} to {experience.dateTo} </p>
         <p>{experience.role}</p>
         <p>{experience.responsibilities}</p>
-        {/* <p>{experience.dateFrom} to {experience.dateTo}</p>  */}
         <button className="expEdit" onClick={() => editExpEntry(index)}>Edit</button>
         <button className="expDelete" onClick={() => deleteExpEntry(index)}>Delete</button>
     </div>
